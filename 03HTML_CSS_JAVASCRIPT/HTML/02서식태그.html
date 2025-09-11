@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02서식태그</title>
+</head>
+<body>
+    <!-- 제목 태그 h1 - h6 -->
+     <!-- h1 가장 큰 제목, h6 가장 작은 제목 -->
+
+     <h1>제목1</h1>
+     <h2>제목2</h2>
+     <h3>제목3</h3>
+     <h4>제목4</h4>
+     <h5>제목5</h5>
+     <h6>제목6</h6>
+
+    <hr> 
+
+    <!-- 내용 태그 p paragraph 문단 -->
+     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis a vero nobis, numquam consequatur officiis, excepturi iste aut debitis sapiente aspernatur! Nulla enim voluptatem rerum provident minus, sequi suscipit tenetur!</p>
+     <p>Lorem ipsum dolor sit amet.</p>
+     <!-- p태그, h태그는 자동 줄바꿈 -->
+
+     <hr>
+     <!-- 콘텐츠를 그룹화 하는 태그 div-->
+     <div>
+        <p>요리</p>
+        <p>Lorem ipsum dolor sit amet.</p>
+     </div>
+     <div>
+        <p>날씨</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+     </div>
+
+<br>
+
+     <!-- 문장을 강조할 때 사용하는 태그 b, strong, i, em -->
+      <strong>강조할 문장 1 strong</strong><br>
+      <b>강조할 문장 2 b</b><br>
+      <em>강조할 문장 3 em</em><br>
+      <i>강조할 문장 4 i</i><br>
+      <!-- 시멘틱 웹 이후 strong, em이 도입. 검색 잘 되게 하려면 이거 써야함 -->
+
+      <hr>
+
+      <!-- 링크 태그 a -->
+       <a href="https://www.naver.com">네이버</a>
+       <a href="https://www.naver.com" target="_blank">네이버 새창 열기</a>
+       <a href="https://www.naver.com" target="_self">네이버 self</a>
+
+     <hr>
+     <!-- 태그의 종류 -->
+      <!-- 인라인 요소 a, span, strong, b, em, i 자동 줄바꿈이 안 되는 태그-->
+      <!-- 블록 요소 h, p 자동 줄바꿈이 되는 태그 -->
+
+      <p>블록요소 1</p>
+      <p>블록요소 2</p>
+
+     <div>
+        <strong>인라인 요소1</strong>
+        <em>인라인 요소 2</em>
+        <a href="http://www.naver.com"인라인 요소 3></a>
+
+        
+     </div>
+    <p>span 태그는 <span><strong>인라인요소</strong></span> 안에서 그룹화 하는 태그 입니다.</p>
+    
+    <hr>
+
+    <!-- 이미지 삽입 태그 img, figure -->
+    <!-- img태그로  -->
+
+     <img src="../img/해달.jpg" alt="해달">
+
+     <!-- 시맨틱 요소 추가 -->
+
+     <figure>
+        <img src="../img/해달.jpg" alt="해달">
+     </figure>
+     <figcaption>
+        해달이 놀라는 사진
+     </figcaption>
+
+</body>
+</html>
