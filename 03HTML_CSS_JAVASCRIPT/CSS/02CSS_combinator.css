@@ -1,0 +1,27 @@
+/* 복합 셀렉터 (Combinator)
+
+후손 셀렉터 (Descendant Combinator)
+
+셀렉터A 셀렉터B*/
+
+div p {color: red;}
+/* 자식 셀렉터 (Child Combinator)
+셀렉터A > 셀렉터B */
+div > p {color: blue;}
+
+span > p {color: green;}
+/* 형제(동위) 셀렉터 (Sibling Combinator) */
+/* p 요소의 형제 요소 중에 p 요소 바로 뒤에 위치하는 ul 요소를 선택한다. */
+/* 인접 형제 셀렉터(Adjacent Sibling Combinator) */
+/* 인접 형제 셀렉터(Adjacent Sibling Combinator)
+  셀렉터A의 형제 요소 중 셀렉터A 바로 뒤에 위치하는 셀렉터B 요소를 선택한다. A와 B 사이에 다른 요소가 존재하면 선택되지 않는다.
+  셀A+셀B */
+
+  p+ul {color: red;}
+
+  /* 일반 형제 셀렉터(General Sibling Combinator) */
+  /* 일반 형제 셀렉터(General Sibling Combinator)
+    셀렉터A의 형제 요소 중 셀렉터A 뒤에 위치하는 셀렉터B 요소를 모두 선택한다.
+    셀렉터A ~ 셀렉터B */
+
+    #gsc p ~ ul {color: brown;}
