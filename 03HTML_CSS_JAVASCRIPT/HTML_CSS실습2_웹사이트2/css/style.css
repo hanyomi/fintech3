@@ -1,0 +1,186 @@
+* {
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+
+}
+/* header */
+header .inner {
+    width: 1180px;
+    height: 200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+header .inner h1 {
+    position: absolute;
+    left:30px;
+    top: 50px;
+    border: 1px solid white;
+    box-shadow: -1px 1px 1px 1px gray;
+    border-radius: 20%;
+    padding: 10px auto;
+}
+header .inner h1 a {
+    font: bold 30px/1 "arial";
+}
+
+header .inner p {
+    position: absolute;
+    left: 20px;
+    top: 110px;
+    font: 15px "arial";
+}
+
+header .inner .util {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    list-style: none;
+}
+header .inner .util li {
+    float: left;
+}
+
+.introduce {
+    width: 1000px;
+    height: 780px;
+    margin: 0 auto;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 1%;
+}
+.title h2 {
+    position: relative;
+    top: 40px;
+    left: 25px;
+}
+
+.explain {
+    position: relative;
+    top: 50px;
+    left: 20px;
+}
+.explain p {
+    font-size: 14px;
+    color: #777;
+}
+.introduce .pic {
+    width: 80%;
+    height: calc(100vh - 120px);
+    overflow: hidden;
+    background-color: black;
+    position: relative;
+    padding-top: 250px;
+    top:150px;
+    left:auto;
+    margin: auto;
+}
+.introduce .pic img {
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    top: 0px;
+    left: 0px;
+}
+.detail p {
+    position: absolute;
+    bottom: 15px;
+    left: 40px;
+    font-size: 14px;
+    color: #777;
+}
+.link {
+    position: absolute;
+    bottom: 15px;
+    right: 40px;
+
+}
+#account {
+    width: 1000px;
+    height: 400px;
+    margin: 0 auto;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 1%;
+}
+.account table {
+    width: 900px;
+    height: 200px;
+    position: absolute;
+    border: 1px solid gray;
+    border-radius: 3%;
+    top: 150px;
+    margin: auto;
+}
+.account p {
+    position: absolute;
+    top: 120px;
+    left: 20px;
+}
+
+#lately {
+    width: 1000px;
+    height: 600px;
+    margin: 0 auto;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 1%;
+}
+#lately table {
+    width: 900px;
+    height: 400px;
+    position: absolute;
+    border: 1px solid gray;
+    border-radius: 3%;
+    top: 150px;
+    margin: auto;
+}
+#lately a {
+    position: relative;
+    bottom: 10px;
+
+}
+
+#interest-rate {
+    width: 1000px;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 1%;
+}
+#interest-rate .interest{
+    position: relative;
+    top:50px;
+    left:30px;
+}
+#interest-rate .interest dd {
+    position: relative;
+    left: 30%;
+    bottom: 30px;
+}
+
+#FAQ {
+    width: 1000px;
+    height: 400px;
+    margin: 0 auto;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 1%;    
+}
+#FAQ ul li {
+    position: relative;
+    top: 50px;
+    left: 40px;
+}
+#FAQ .qes {
+    position: relative;
+    top: 70px;
+    left: 10px;
+}
+    

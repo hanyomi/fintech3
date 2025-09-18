@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoFin - 핀테크 정적 예제</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <div class="inner">
+            <h1><a href="#">NeoFin</a></h1>
+
+            <p>개인자산 관리와 간편 결제를 하나로.</p>
+
+            <ul class="util">
+                <li><a href="#">소개</a></li>
+                <li><a href="#">계좌 요약</a></li>
+                <li><a href="#">최근 거래</a></li>
+                <li><a href="#">금리/환율</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">문의 및 가입</a></li>
+            </ul>
+        </div>
+    </header>
+    <hr>
+    <section>
+        <div class="introduce">
+            <div class="title"><h2>서비스 소개</h2></div>
+            <div class="explain">
+                <p>NeoFin은 수수료를 낮추고, 투명한 요금으로 누구나 쉽게 자산을
+                관리할 수 있도록 돕는 핀테크 서비스입니다.</p>
+            
+            </div>
+            <div class="pic">
+                <img src="./img/스크린샷 2025-09-17 153717.png" alt="">
+            </div>
+                <div class="detail">
+                    <p>KYC 및 2FA를 지원합니다. 가입일:2025-09-08</p>
+                </div>
+        </div>
+    <br>
+    <div id="account">
+        <div class="title">
+            <h2>계좌 요약</h2>
+        </div>
+        <div class="explain">
+            <p>아래 표는 데모 데이터이며, 실제 연동 없이 HTML만으로 만들어졌습니다.</p>
+        </div>
+        <div class="account">
+            <p>나의 계좌 현황</p>
+            <table>
+                
+                <thead>
+                    <tr>
+                        <th>은행</th>
+                        <th>계좌번호</th>
+                        <th>종류</th>
+                        <th>잔액(원)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>NeoBank</td>
+                        <td>123-456-7890</td>
+                        <td>입출금</td>
+                        <td>2,540,000</td>
+                    </tr>
+                    <tr>
+                        <td>NeoBank</td>
+                        <td>987-654-3210</td>
+                        <td>예금</td>
+                        <td>10,000,000</td>
+                    </tr>
+                    <tr>
+                        <td>K-Finance</td>
+                        <td>222-333-4444</td>
+                        <td>증권 CMA</td>
+                        <td>1,235,500</td>
+                    </tr>
+                   
+                </tbody>
+            </table>
+        </div>
+        <div class="detail"><p>※본 표는 학습용 예시입니다.</p></div>
+    </div>
+    <div id="lately">
+        <div class="title"><h2>최근 거래</h2></div>
+        <div class="explain"><p>최근 5건</p></div>
+        <table>
+            
+            <thead>
+                <tr>
+                    <th>일시</th>
+                    <th>내용</th>
+                    <th>금액</th>
+                    <th>잔액</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2025-09-06 09:20</td>
+                    <td>편의점 결제</td>
+                    <td>-5,800</td>
+                    <td>2,544,200</td>
+                </tr>
+                <tr>
+                    <td>2025-09-05 18:05</td>
+                    <td>급여 입금</td>
+                    <td>+3,200,000</td>
+                    <td>2,550,000</td>
+                </tr>
+                <tr>
+                    <td>2025-09-04 13:11</td>
+                    <td>커피</td>
+                    <td>-4,500</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>2025-09-03 20:40</td>
+                    <td>온라인 쇼핑</td>
+                    <td>-78,000</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>2025-09-02 10:00</td>
+                    <td>ATM 출금</td>
+                    <td>-100,000</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+        </table>
+            <div class="detail">
+                <p>※잔액 열의 '-'는 예시상 생략을 의미합니다.</p>
+            </div>
+        <div class="link"><a href="#">맨위로</a></div>
+    </div>
+    <hr>
+    
+    <div id="interest-rate">
+        <div class="title"><h2>금리/환율(예시)</h2></div>
+        <div class="interest">
+            <dt>정기예금 금리</dt>
+            <dd>연 3.0% (세전)</dd>
+
+            <dt>미국달러(USD) 환율</dt>
+            <dd>1,350원 / USD</dd>
+
+            <dt>일본엔(JPY) 환율</dt>
+            <dd>9.3원 / JPY</dd>
+        </div>
+        <div class="detail">
+            <p>※실시간 정보가 아닌 정적 예시입니다.</p>
+         </div>
+        <div class="link"><a href="#">맨위로</a></div>
+    </div>
+
+    <hr>
+    
+    <div id="FAQ">
+        <div class="title"><h2>자주 묻는 질문 (FAQ)</h2></div>
+        <ul>
+            <li><a href="#">수수료는 얼마나 되나요?</a></li>
+            <li><a href="#">해외 결제는 지원하나요?</a></li>
+            <li><a href="#">보안은 어떻게 관리되나요?</a></li>
+        </ul>
+        <div class="qes">
+            <h3>수수료는 얼마나 되나요?</h3>
+            <p>국내 이체는 기본 무료입니다. 일부 특수 거래는 별도의 수수료가 적용될 수 있습니다</p>
+            <h3>해외 결제는 지원하나요?</h3>
+            <p>네, 해외 결제를 지원합니다. FTF가 발생할 수 있습니다.</p>
+            <h3>보안은 어떻게 관리되나요?</h3>
+            <p class="rule">"보안은 기능이 아니라 원칙입니다."</p></div>
+        </div>
+        
+        <div class="detail">
+            <p>NeoFin은 2FA와 기기 인증, 이상 거래 탐지를 위한 규칙 기반 검토를 제공합니다.</p>
+        </div>
+        <div class="link"><a href="#">맨위로</a></div>
+        
+
+    </div>
+    <hr>
+    </section>
+    <footer>
+        <div id="footer">
+            <p>고객센터: <a href="support@neofin.example">support@neofin.example</a></p>
+            <p>서울시 마포구 네오로 123, Neo Fin 타워 10F</p>
+            <br>
+            <p>© 2025 NeoFin.All rights reserved.</p>
+            <br>
+            <a href="#">맨위로</a>
+        </div>
+    </footer>
+</body>
+</html>

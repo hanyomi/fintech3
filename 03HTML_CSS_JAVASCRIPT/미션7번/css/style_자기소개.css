@@ -1,0 +1,38 @@
+h2 {
+    text-align: center;
+}
+.intro {
+    text-align: center;
+    color: gray;
+    position: relative;
+    bottom: 15px;
+}
+
+.section {
+    /* width: 55%; */
+    border: 1px solid #dbdada;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 5px 5px 5px #f4f4f4 ;
+    border-radius: 30px;
+}
+.section2 {
+    /* width:; */
+    border: 1px solid #dbdada;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 5px 5px 5px #f4f4f4 ;
+    border-radius: 30px;
+}
+
+a {
+    color: rgb(93, 107, 182);
+    text-decoration-style : dashed;
+}
+.introduce {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    
+}
+
+
