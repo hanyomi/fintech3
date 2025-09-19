@@ -22,13 +22,13 @@
     /* justify-content: flex-start; */
     /* justify-content: flex-end; */
     /* justify-content: center; */
-    /* justify-content: space-between; */
+    justify-content: space-between;
     /* justify-content: space-around; */
     /* justify-content: space-evenly; */
 
     /* 세로방향(y축) 아이템 정렬 stretch 기본값 */
     /* align-items: stretch; */
-    /* align-items: flex-start */
+    /* align-items: flex-start; */
     /* align-items: flex-end */
     /* align-items: center; */
     /* align-items: baseline; */
@@ -49,7 +49,7 @@
 
 }
 
-.flex-item:nth-child(2n) {
+/* .flex-item:nth-child(2n) {
     background-color: blue;
 }
 
@@ -67,4 +67,4 @@ align-self: flex-end;
 .flex-item:nth-child(2n+1) {
 background-color: brown;
 align-self: self-end;
-}
+} */
