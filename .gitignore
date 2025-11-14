@@ -12,3 +12,4 @@ dist/
 *.jpg
 *.png
 *.htm
+catboost_info/
