@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyFin V2.0 MVP (Demo)</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <style>
+        /* index.html만을 위한 추가 스타일 (모바일 컨테이너 내부에 맞춤) */
+        .mobile-container {
+            width: 390px;
+            max-width: 100%;
+            margin: 24px auto;
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 22px 45px rgba(15, 23, 42, 0.25);
+            border: 1px solid rgba(148, 163, 184, 0.4);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 720px;
+        }
+        .appbar { padding: 16px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f3f4f6; }
+        .appbar__title { font-size: 1.1rem; font-weight: 700; }
+        .appbar__actions button { background: none; border: none; font-size: 1.2rem; cursor: pointer; margin-left: 10px; color: #4b5563; }
+        .main-content { flex: 1; padding: 16px; overflow-y: auto; }
+        .card { padding: 16px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin-bottom: 12px; background: white; border: 1px solid #f3f4f6; }
+        .ai-card { background-color: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; padding: 12px; border-radius: 8px; margin-bottom: 12px; }
+        .list-table th, .list-table td { padding: 10px; text-align: left; border-bottom: 1px solid #e5e7eb; font-size: 0.9rem; }
+        .bottom-nav button.active { color: #2563eb; font-weight: bold; }
+        
+        .market-tabs button.active { color: #2563eb; border-bottom: 2px solid #2563eb; }
+    </style>
+</head>
+<body>
+
+<div class="mobile-container">
+    
+    <header class="appbar">
+        <div class="appbar__title" id="page-title">EasyFin V2.0</div>
+        <div class="appbar__actions">
+            <button class="icon-button">🔍</button>
+            <button class="icon-button">🔔</button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div id="home" class="tab-content active">
+            
+            <div id="ai-briefing-card" class="ai-card">AI 브리핑 로딩 중...</div>
+            
+            <section class="card">
+                <h3 style="margin-bottom: 8px; font-size: 1.1rem;">총 자산: <span id="total-asset" style="font-weight: 700;">로딩 중...</span></h3>
+                
+                <p style="font-weight: 600; margin-top: 15px;">자산 비중</p>
+                <ul id="asset-breakdown" class="simple-list" style="margin-top: 5px;"></ul>
+            </section>
+
+            <section class="card">
+                <h3 style="font-size: 1.1rem; margin-bottom: 10px;">계좌별 요약</h3>
+                <div id="account-summary"></div>
+            </section>
+            
+            <section class="card" id="recommended-live">
+                <h3 style="font-size: 1.1rem; margin-bottom: 10px;">추천 라이브</h3>
+                </section>
+        </div>
+
+        <div id="market" class="tab-content">
+            <h2 style="margin-bottom: 15px; font-size: 1.2rem;">📊 마켓 탐색</h2>
+            
+            <div class="tab-nav market-tabs" id="market-category-tabs" style="margin-bottom: 15px;">
+                <button class="tab-button active" data-category="all">전체</button>
+                <button class="tab-button" data-category="공모주">공모주</button>
+                <button class="tab-button" data-category="ETF">ETF</button>
+                <button class="tab-button" data-category="채권">채권</button>
+                <button class="tab-button" data-category="리츠">리츠</button>
+            </div>
+
+            <section class="card" style="padding: 0;">
+                <table class="list-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 40%;">상품명</th>
+                            <th>위험도</th>
+                            <th>수익률</th>
+                            <th>일정</th>
+                        </tr>
+                    </thead>
+                    <tbody id="product-list-body">
+                        <tr><td colspan="4" style="text-align: center;">데이터 로딩 중...</td></tr>
+                    </tbody>
+                </table>
+                <p style="padding: 10px 16px; font-size: 0.8rem; color: #6b7280;">
+                    💡 향후 AI가 사용자 관심사를 기반으로 유사 테마 상품을 추천해 드립니다.
+                </p>
+            </section>
+        </div>
+
+        <div id="live" class="tab-content">
+            <h2 style="margin-bottom: 15px; font-size: 1.2rem;">🔴 라이브 & 콘텐츠</h2>
+            
+            <div class="tab-nav" id="live-tabs" style="margin-bottom: 15px;">
+                <button class="tab-button active" data-live-tab=" 진행중">진행중</button>
+                <button class="tab-button" data-live-tab=" 예정">예정</button>
+                <button class="tab-button" data-live-tab="다시보기">다시보기</button>
+            </div>
+            
+            <section class="card" style="padding: 0;">
+                <div id="live-list-content">
+                    </div>
+                <p style="padding: 10px 16px; font-size: 0.8rem; color: #6b7280;">
+                    💡 다시보기 영상은 향후 AI 핵심 요약(FR-A04)을 제공합니다.
+                </p>
+            </section>
+        </div>
+
+        <div id="community" class="tab-content">
+            <h2 style="margin-bottom: 15px; font-size: 1.2rem;">💬 커뮤니티</h2>
+            
+            <section class="card" id="post-write-area">
+                <h4 style="margin-bottom: 10px;">게시글 작성</h4>
+                <input type="text" id="post-title-input" placeholder="제목을 입력하세요" class="input" style="width: 100%; margin-bottom: 8px;">
+                <textarea id="post-content-input" placeholder="내용을 입력하세요" class="input" style="width: 100%; height: 60px; margin-bottom: 10px;"></textarea>
+                <button onclick="alert('게시글 등록 기능은 MVP 범위 외입니다. (FR-041)')" class="btn btn--secondary" style="width: 100%;">등록</button>
+            </section>
+            
+            <section class="card" style="padding: 0;">
+                <h3 style="font-size: 1.1rem; padding: 16px 16px 0;">최신 게시글</h3>
+                <div id="post-list-body" class="market-list">
+                    </div>
+            </section>
+        </div>
+
+        <div id="my" class="tab-content">
+            <h2 style="margin-bottom: 15px; font-size: 1.2rem;">👤 마이 페이지</h2>
+            
+            <section class="card">
+                <h3 style="margin-bottom: 10px;">프로필</h3>
+                <p><strong>닉네임:</strong> 박지현</p>
+                <p><strong>이메일:</strong> jhyun.park@easyfin.com</p>
+            </section>
+            
+            <section class="card">
+                <h3 style="margin-bottom: 10px;">연동 금융사</h3>
+                <ul class="simple-list">
+                    <li>미래에셋증권</li>
+                    <li>카카오뱅크</li>
+                    <li>EasyPay</li>
+                </ul>
+            </section>
+            
+            <section class="card">
+                <h3 style="margin-bottom: 10px;">팔로우 전문가</h3>
+                <ul id="expert-list" class="simple-list">
+                    <li>김투자 전문가</li>
+                    <li>최부자 셀러</li>
+                </ul>
+            </section>
+            
+            <button onclick="alert('로그아웃되었습니다. (FR-053)')" class="btn" style="background-color: #ef4444; margin-top: 10px;">로그아웃</button>
+        </div>
+
+    </main>
+    
+    <div id="product-modal" class="modal" style="display: none;">
+        <div class="modal__content" style="max-width: 90%;">
+            <span class="close-btn" onclick="document.getElementById('product-modal').style.display='none'">&times;</span>
+            <h3 id="modal-product-name" style="font-size: 1.2rem;">상품 상세 정보</h3>
+            <p class="modal__code" id="modal-product-code"></p>
+            
+            <p style="margin-top: 10px;"><strong>카테고리:</strong> <span id="modal-product-category"></span></p>
+            <p><strong>위험도:</strong> <span id="modal-product-risk"></span></p>
+            <p><strong>예상 수익률:</strong> <span id="modal-product-return"></span></p>
+            <p><strong>일정/특이사항:</strong> <span id="modal-product-schedule"></span></p>
+            
+            <div class="ai-card" style="margin-top: 20px; background-color: #e0f2fe; border: 1px solid #90cdf4;">
+                <p style="color: #1e40af;"><strong>AI 인사이트 (향후):</strong></p>
+                <p style="font-size: 0.9rem; color: #1e40af;">
+                    현재 사용자 포트폴리오에 유사 자산이 많으므로 투자 비중을 2% 이하로 권장합니다.
+                </p>
+            </div>
+            <button class="btn" onclick="document.getElementById('product-modal').style.display='none'" style="margin-top: 15px; width: 100%;">확인</button>
+        </div>
+    </div>
+    
+    <nav class="bottom-nav">
+        <button onclick="showTab('home', 'EasyFin V2.0')" id="nav-home" class="active">🏠 홈</button>
+        <button onclick="showTab('market', '마켓')" id="nav-market">📊 마켓</button>
+        <button onclick="showTab('live', '라이브')" id="nav-live">🔴 라이브</button>
+        <button onclick="showTab('community', '커뮤니티')" id="nav-community">💬 커뮤니티</button>
+        <button onclick="showTab('my', '마이')" id="nav-my">👤 마이</button>
+    </nav>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

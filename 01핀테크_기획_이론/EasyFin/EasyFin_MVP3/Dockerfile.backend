@@ -1,0 +1,19 @@
+# requirements.txt 기반 Python 3.10 slim 이미지
+FROM python:3.10-slim
+
+WORKDIR /app
+
+# requirements.txt에 명시된 패키지 설치
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# 3. 애플리케이션 코드 복사
+COPY backend /app/backend
+COPY startup.sh .
+COPY .env .
+
+# 4. uvicorn 포트 노출
+EXPOSE 8000
+
+# 5. 실행 스크립트 설정
+CMD ["sh", "startup.sh"]
