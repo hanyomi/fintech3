@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: jh
+  datasource:
+    url: jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none # 개발 단계에서는 update, 운영 환경에서는 none 또는 validate 사용 권장
+    database-platform: org.hibernate.dialect.MySQLDialect
+  sql:
+    init:
+      mode: always # 스키마 및 데이터 초기화 활성화
+
+server:
+  port: 8080 # 서버 포트 (기본값 유지 또는 필요 시 변경)
+
+apt:
+  trade:
+    service:
+      key: ${APT_TRADE_SERVICE_KEY}

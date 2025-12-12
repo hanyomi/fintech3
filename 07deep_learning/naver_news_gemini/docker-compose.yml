@@ -1,0 +1,11 @@
+services:
+  naver-news-gemini:
+    build: .
+    container_name: naver_news_gemini
+    restart: always
+    ports:
+      - "7860:7860"
+    env_file:
+      - .env_gemini   # 이 파일에서 API 키 로딩
+    environment:
+      - TZ=Asia/Seoul
